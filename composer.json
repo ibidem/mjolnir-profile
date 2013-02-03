@@ -1,0 +1,31 @@
+{
+	"name": "mjolnir/profile",
+	"version": "1.0",
+	"description": "Tooling specific to Mjolnir classes.",
+	"keywords": [ ],
+	"homepage": "https://github.com/ibidem",
+	"type": "library",
+	"license": "BSD-2",
+	"authors": [
+		{
+			"name": "srcspider",
+			"homepage": "https://github.com/srcspider"
+		}
+	],
+
+	"require": {
+		"php": ">=5.4.10"
+	},
+
+	"autoload": {
+		"psr-0": {
+			"mjolnir\\profile": "../.."
+		}
+	},
+
+	"extra": {
+		"branch-alias": {
+			"dev-wip/v1.0": "1.0.x-dev"
+		}
+	}
+}
