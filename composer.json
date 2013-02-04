@@ -21,11 +21,6 @@
 		"psr-0": {
 			"mjolnir\\profile": "../.."
 		}
-	},
-
-	"extra": {
-		"branch-alias": {
-			"dev-wip/v1.0": "1.0.x-dev"
-		}
 	}
+	
 }
