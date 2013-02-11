@@ -7,7 +7,7 @@
  * @copyright  (c) 2013, Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-class Application extends parent\Application
+class Application extends next\Application
 {
 	/**
 	 * @return \mjolnir\types\Application
