@@ -11,6 +11,8 @@ class SQLStatement extends next\SQLStatement
 {
 	function run()
 	{
+		$dbtoken = \app\Benchmark::token("database", 'Application');
+		
 		$idpos = \strpos($this->query, '--');
 		$identity = \substr($this->query, $idpos + 2);
 		$token = \app\Benchmark::token("<span title=\"{$this->query}\">$identity</span>", 'Database Queries');
@@ -19,11 +21,13 @@ class SQLStatement extends next\SQLStatement
 		{
 			$result = parent::run();
 			\app\Benchmark::stop($token);
+			\app\Benchmark::stop($dbtoken);
 			return $result;
 		}
 		catch (\Exception $e)
 		{
 			\app\Benchmark::stop($token);
+			\app\Benchmark::stop($dbtoken);
 			throw $e;
 		}
 	}
