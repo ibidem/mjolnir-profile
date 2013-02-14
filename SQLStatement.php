@@ -14,6 +14,7 @@ class SQLStatement extends next\SQLStatement
 		$idpos = \strpos($this->query, '--');
 		$identity = \substr($this->query, $idpos + 2);
 		$token = \app\Benchmark::token("<span title=\"{$this->query}\">$identity</span>", 'Database Queries');
+		
 		try
 		{
 			$result = parent::run();
