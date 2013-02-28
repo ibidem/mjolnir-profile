@@ -10,7 +10,7 @@
 class Application extends next\Application
 {
 	/**
-	 * @return \mjolnir\types\Application
+	 * @return static
 	 */
 	static function instance()
 	{
