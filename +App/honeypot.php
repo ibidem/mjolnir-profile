@@ -7,13 +7,13 @@
 
 
 /**
- * @method \app\Application channel_is($channel)
  * @method \app\Application recover_exceptions()
  * @method \app\Application throw_exceptions()
  * @method \app\Application addmetarenderer($key, $metarenderer)
  * @method \app\Application injectmetarenderers(array $metarenderers = null)
- * @method \app\Application Channeled__channel_is($channel)
+ * @method \app\Application channel_is($channel)
  * @method \app\Channel channel()
+ * @method \app\Application channel_is($channel)
  */
 class Application extends \mjolnir\profile\Application
 {
@@ -23,10 +23,17 @@ class Application extends \mjolnir\profile\Application
 	static function stack($args) { return parent::stack($args); }
 }
 
+/**
+ * @method \app\SQLStatement prepare($key, $statement = null, $lang = null)
+ * @method \app\SQLDatabase begin()
+ * @method \app\SQLDatabase commit()
+ * @method \app\SQLDatabase rollback()
+ * @method \app\SQLStatement run_stored_statement($key)
+ */
 class SQLDatabase extends \mjolnir\profile\SQLDatabase
 {
 	/** @return \app\SQLDatabase */
-	static function instance() { return parent::instance(); }
+	static function instance($database = 'default') { return parent::instance($database); }
 }
 
 /**
@@ -42,11 +49,11 @@ class SQLDatabase extends \mjolnir\profile\SQLDatabase
  * @method \app\SQLStatement strs(array $params, array $filter = null, $varkey = ':')
  * @method \app\SQLStatement nums(array $params, array $filter = null, $varkey = ':')
  * @method \app\SQLStatement bools(array $params, array $filter = null, array $map = null, $varkey = ':')
- * @method \app\SQLStatement dates(array $params, array $filter = null, array $map = null, $varkey = ':')
+ * @method \app\SQLStatement dates(array $params, array $filter = null, $varkey = ':')
  * @method \app\SQLStatement bindstrs(array  & $params, array $filter = null, $varkey = ':')
  * @method \app\SQLStatement bindnums(array  & $params, array $filter = null, $varkey = ':')
  * @method \app\SQLStatement bindbools(array  & $params, array $filter = null, $varkey = ':')
- * @method \app\SQLStatement binddates(array  & $params, array $filter = null, array $map = null, $varkey = ':')
+ * @method \app\SQLStatement binddates(array  & $params, array $filter = null, $varkey = ':')
  * @method \app\SQLStatement args(array  & $params, array $filter = null, $varkey = ':')
  * @method \app\SQLStatement page($page, $limit = null, $offset = 0)
  */
