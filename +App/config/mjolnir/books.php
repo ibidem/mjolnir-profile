@@ -12,7 +12,7 @@
 								// be overwritten on a per file basis
 								'namespace' => 'mjolnir\profile',
 
-								'title' => 'Types',
+								'title' => 'Profiling',
 
 								'introduction' => array
 									(
@@ -28,27 +28,6 @@
 //												'title' => 'Caching Types',
 //												'type'  => 'markdown',
 //												'file'  => '-01-Caching-Types.md',
-//											),
-//										'generic-types' => array
-//											(
-//												'idx'   => 2,
-//												'title' => 'Generic Types',
-//												'file'  => '-02-Generics-Types.md',
-//												'type'  => 'markdown',
-//											),
-//										'document-types' => array
-//											(
-//												'idx'   => 3,
-//												'title' => 'Document Types',
-//												'file'  => '-03-Document-Types.md',
-//												'type'  => 'markdown',
-//											),
-//										'misc-types' => array
-//											(
-//												'idx'   => 4,
-//												'title' => 'Miscellaneous Types',
-//												'file'  => '-04-Miscellaneous-Types.md',
-//												'type'  => 'markdown',
 //											),
 									)
 							),
