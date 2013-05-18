@@ -6,14 +6,20 @@
 // HowTo: order honeypot -n 'mjolnir\profile'
 
 
+class Access extends \mjolnir\profile\Access
+{
+	/** @return \app\Access */
+	static function instance() { return parent::instance(); }
+}
+
 /**
  * @method \app\Application recover_exceptions()
  * @method \app\Application throw_exceptions()
  * @method \app\Application addmetarenderer($key, $metarenderer)
  * @method \app\Application injectmetarenderers(array $metarenderers = null)
- * @method \app\Application channel_is($channel)
+ * @method \app\Application channel_is($channel = null)
  * @method \app\Channel channel()
- * @method \app\Application channel_is($channel)
+ * @method \app\Application channel_is($channel = null)
  */
 class Application extends \mjolnir\profile\Application
 {

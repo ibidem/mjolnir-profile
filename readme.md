@@ -1,3 +1,5 @@
+*This module is for measuring or logging more then just performance.*
+
 See `+Docs/` for documentation and information on the module.
 
 -
