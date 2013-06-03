@@ -16,9 +16,12 @@ class Access extends next\Access
 	{
 		static $id = null;
 
+		$logpath = \app\Env::key('etc.path').'logs/';
+		
 		if ($id === null)
 		{
 			$id = \base_convert(\crc32(\uniqid()), 10, 32);
+			\mjolnir\append_to_file($logpath, 'access.log', PHP_EOL."-- start of $id");
 		}
 
 		$status = parent::can($relay, $context, $attribute, $user_role);
@@ -70,10 +73,10 @@ class Access extends next\Access
 			}
 
 			$time = \date('Y-m-d H:i:s');
-			$logpath = \app\Env::key('etc.path').'logs/';
+			
 			$message = \sprintf
 				(
-					" %s --- %-7s | %7s | %-25s | %-30s | %s",
+					" %s --- %-7s | %7s | %-12s | %-30s | %s",
 					$time,
 					$id,
 					$status ? 'ALLOWED' : 'DENIED',
@@ -82,7 +85,7 @@ class Access extends next\Access
 					$the_context
 				);
 
-				\mjolnir\append_to_file($logpath, 'access.log', PHP_EOL.$message);
+			\mjolnir\append_to_file($logpath, 'access.log', PHP_EOL.$message);
 		}
 
 		return $status;
