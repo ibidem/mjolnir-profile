@@ -8,8 +8,6 @@
 
 class Access extends \mjolnir\profile\Access
 {
-	/** @return \app\Access */
-	static function instance() { return parent::instance(); }
 }
 
 /**
@@ -68,3 +66,34 @@ class SQLStatement extends \mjolnir\profile\SQLStatement
 	/** @return \app\SQLStatement */
 	static function instance($statement = null, $query = null) { return parent::instance($statement, $query); }
 }
+
+class Stash_APC extends \mjolnir\profile\Stash_APC
+{
+	/** @return \app\Stash_APC */
+	static function instance($contextual = true) { return parent::instance($contextual); }
+}
+
+class Stash_File extends \mjolnir\profile\Stash_File
+{
+	/** @return \app\Stash_File */
+	static function instance($contextual = true) { return parent::instance($contextual); }
+}
+
+class Stash_Memcache extends \mjolnir\profile\Stash_Memcache
+{
+	/** @return \app\Stash_Memcache */
+	static function instance($contextual = true) { return parent::instance($contextual); }
+}
+
+class Stash_Memcached extends \mjolnir\profile\Stash_Memcached
+{
+	/** @return \app\Stash_Memcached */
+	static function instance($contextual = true) { return parent::instance($contextual); }
+}
+
+class Stash extends \mjolnir\profile\Stash
+{
+	/** @return \app\Stash */
+	static function instance() { return parent::instance(); }
+}
+trait Trait_Stash_Profile { use \mjolnir\profile\Trait_Stash_Profile; }
