@@ -28,7 +28,7 @@ class Access extends next\Access
 
 			$status = parent::can($relay, $context, $attribute, $user_role);
 
-			$devlog = \app\CFS::config('mjolnir/base')['logging']['devlogs'];
+			$devlog = \app\CFS::config('mjolnir/base')['logging']['short.log'];
 
 			if ($devlog)
 			{
