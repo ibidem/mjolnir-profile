@@ -21,7 +21,7 @@ class SQLStatement extends next\SQLStatement
 			$identity = \substr($this->query, $idpos + 2);
 			$token = \app\Benchmark::token("<span title=\"{$this->query}\">$identity</span>", 'Database Queries');
 
-			if ($baseconfig['logging']['short.log'] && $baseconfig['logging']['short.sql.log'])
+			if ($baseconfig['logging']['devlogs'] && $baseconfig['logging']['short.sql.log'])
 			{
 				// extract sql query
 				$thequery = \preg_replace('#[ ]{2,}#', ' ', \preg_replace('#[\t\n\r]#', ' ', \trim($this->query)));
