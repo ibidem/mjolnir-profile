@@ -7,5 +7,5 @@
 				// WHERE (ie. ommiting JOINs, etc)
 				'short.sql.log' => false,
 			),
-	
+
 	); # config
