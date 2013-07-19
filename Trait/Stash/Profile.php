@@ -165,7 +165,7 @@ trait Trait_Stash_Profile
 		}
 		else # non-development
 		{
-			parent:purge($tags);
+			parent::purge($tags);
 		}
 	}
 
