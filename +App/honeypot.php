@@ -67,24 +67,40 @@ class SQLStatement extends \mjolnir\profile\SQLStatement
 	static function instance($statement = null, $query = null) { return parent::instance($statement, $query); }
 }
 
+/**
+ * @method \app\Stash_APC set($key, $data, $expires = null)
+ * @method \app\Stash_APC flush()
+ */
 class Stash_APC extends \mjolnir\profile\Stash_APC
 {
 	/** @return \app\Stash_APC */
 	static function instance($contextual = true) { return parent::instance($contextual); }
 }
 
+/**
+ * @method \app\Stash_File set($key, $data, $expires = null)
+ * @method \app\Stash_File flush()
+ */
 class Stash_File extends \mjolnir\profile\Stash_File
 {
 	/** @return \app\Stash_File */
 	static function instance($contextual = true) { return parent::instance($contextual); }
 }
 
+/**
+ * @method \app\Stash_Memcache set($key, $data, $expires = null)
+ * @method \app\Stash_Memcache flush()
+ */
 class Stash_Memcache extends \mjolnir\profile\Stash_Memcache
 {
 	/** @return \app\Stash_Memcache */
 	static function instance($contextual = true) { return parent::instance($contextual); }
 }
 
+/**
+ * @method \app\Stash_Memcached set($key, $data, $expires = null)
+ * @method \app\Stash_Memcached flush()
+ */
 class Stash_Memcached extends \mjolnir\profile\Stash_Memcached
 {
 	/** @return \app\Stash_Memcached */
@@ -93,7 +109,59 @@ class Stash_Memcached extends \mjolnir\profile\Stash_Memcached
 
 class Stash extends \mjolnir\profile\Stash
 {
-	/** @return \app\Stash */
+	/** @return \app\Cache */
+	static function instance() { return parent::instance(); }
+}
+
+/**
+ * @method \app\Task_Log_Access set($name, $value)
+ * @method \app\Task_Log_Access add($name, $value)
+ * @method \app\Task_Log_Access metadata_is(array $metadata = null)
+ * @method \app\Task_Log_Access writer_is($writer)
+ * @method \app\Writer writer()
+ */
+class Task_Log_Access extends \mjolnir\profile\Task_Log_Access
+{
+	/** @return \app\Task_Log_Access */
+	static function instance() { return parent::instance(); }
+}
+
+/**
+ * @method \app\Task_Log_Cache_Get set($name, $value)
+ * @method \app\Task_Log_Cache_Get add($name, $value)
+ * @method \app\Task_Log_Cache_Get metadata_is(array $metadata = null)
+ * @method \app\Task_Log_Cache_Get writer_is($writer)
+ * @method \app\Writer writer()
+ */
+class Task_Log_Cache_Get extends \mjolnir\profile\Task_Log_Cache_Get
+{
+	/** @return \app\Task_Log_Cache_Get */
+	static function instance() { return parent::instance(); }
+}
+
+/**
+ * @method \app\Task_Log_Cache set($name, $value)
+ * @method \app\Task_Log_Cache add($name, $value)
+ * @method \app\Task_Log_Cache metadata_is(array $metadata = null)
+ * @method \app\Task_Log_Cache writer_is($writer)
+ * @method \app\Writer writer()
+ */
+class Task_Log_Cache extends \mjolnir\profile\Task_Log_Cache
+{
+	/** @return \app\Task_Log_Cache */
+	static function instance() { return parent::instance(); }
+}
+
+/**
+ * @method \app\Task_Log_Queries set($name, $value)
+ * @method \app\Task_Log_Queries add($name, $value)
+ * @method \app\Task_Log_Queries metadata_is(array $metadata = null)
+ * @method \app\Task_Log_Queries writer_is($writer)
+ * @method \app\Writer writer()
+ */
+class Task_Log_Queries extends \mjolnir\profile\Task_Log_Queries
+{
+	/** @return \app\Task_Log_Queries */
 	static function instance() { return parent::instance(); }
 }
 trait Trait_Stash_Profile { use \mjolnir\profile\Trait_Stash_Profile; }
