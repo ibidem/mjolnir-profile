@@ -7,7 +7,7 @@ class Trait_Stash_Profile_Tester
 	use Trait_Stash_Profile;
 }
 
-class Trait_Stash_ProfileTest extends \PHPUnit_Framework_TestCase
+class Trait_Stash_ProfileTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

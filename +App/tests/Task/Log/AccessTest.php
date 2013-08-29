@@ -2,7 +2,7 @@
 
 use \mjolnir\profile\Task_Log_Access;
 
-class Task_Log_AccessTest extends \PHPUnit_Framework_TestCase
+class Task_Log_AccessTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

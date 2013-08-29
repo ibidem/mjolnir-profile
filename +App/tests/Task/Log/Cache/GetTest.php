@@ -2,7 +2,7 @@
 
 use \mjolnir\profile\Task_Log_Cache_Get;
 
-class Task_Log_Cache_GetTest extends \PHPUnit_Framework_TestCase
+class Task_Log_Cache_GetTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

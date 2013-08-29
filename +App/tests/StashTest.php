@@ -2,7 +2,7 @@
 
 use \mjolnir\profile\Stash;
 
-class StashTest extends \PHPUnit_Framework_TestCase
+class StashTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()
