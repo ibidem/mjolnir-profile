@@ -78,12 +78,15 @@ class Access extends next\Access
 
 				$message = \sprintf
 					(
-						" %s --- %-7s | %7s | %-12s | %-30s | %s",
+						" %s --- %-7s | %7s | %-12s | %-40s | %-60s || %s ",
 						$time,
 						$id,
 						$status ? 'ALLOWED' : 'DENIED',
 						$user_role !== null ? $user_role : \app\Auth::role(),
 						$relay . ($attribute !== null ? ' -> '.$attribute : ''),
+						\app\Access::last_matched_type_code() === 0
+							? 'no match'
+							: \app\Access::last_instigator().' via '.\app\Access::last_matched_type().' on '.\app\Access::last_matched_role(),
 						$the_context
 					);
 
